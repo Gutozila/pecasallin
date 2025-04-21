@@ -1,0 +1,1 @@
+Sistema final completo com cadastro, imagem, busca e QR code
