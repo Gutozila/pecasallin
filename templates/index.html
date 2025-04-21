@@ -1,19 +1,19 @@
 <!doctype html>
-<title>Estoque</title>
-<h1>Cadastro de Peças</h1>
-<form method=post enctype=multipart/form-data>
-<input name=nome placeholder="Nome da peça" required><br>
-<input name=marca placeholder="Marca"><br>
-<input name=modelo placeholder="Modelo"><br>
-<input name=cor placeholder="Cor"><br>
-<input name=numero placeholder="Número da peça"><br>
-<input name=local placeholder="Local no estoque"><br>
-<input type=file name=imagem><br>
-<button type=submit>Salvar</button>
+<html><head><meta charset="utf-8"><title>Estoque</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header><h1>📦 Estoque de Peças</h1></header>
+<form method="post" enctype="multipart/form-data" class="card">
+<input name="nome" placeholder="Nome da peça" required>
+<input name="marca" placeholder="Marca">
+<input name="modelo" placeholder="Modelo">
+<input name="cor" placeholder="Cor">
+<input name="numero" placeholder="Número da peça">
+<input name="local" placeholder="Local no estoque">
+<input type="file" name="imagem">
+<button type="submit">Salvar</button>
 </form>
-<form method=get><input name=busca value="{{ busca }}" placeholder="Buscar por modelo"><button>Buscar</button></form>
-<ul>
-{% for p in pecas %}
-<li><a href="/ver/{{ p[0] }}">{{ p[1] }} ({{ p[3] }})</a></li>
-{% endfor %}
-</ul>
+<form method="get" class="card">
+<input name="busca" value="{{ busca }}" placeholder="Buscar por modelo">
+<button>Buscar</button>
+</form>
+<div class="lista">{% for p in pecas %}<a class="item" href="/ver/{{ p[0] }}">🔧 {{ p[1] }} ({{ p[3] }})</a>{% endfor %}</div>
+</body></html>

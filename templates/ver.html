@@ -1,11 +1,12 @@
 <!doctype html>
-<title>Ver Peça</title>
-<h1>{{ peca[1] }}</h1>
-<p>Marca: {{ peca[2] }}<br>Modelo: {{ peca[3] }}<br>Cor: {{ peca[4] }}<br>Número: {{ peca[5] }}<br>Local: {{ peca[6] }}</p>
-{% if peca[7] %}
-<img src="/static/uploads/{{ peca[7] }}" width=200><br>
-{% endif %}
-<p><a href="/qrcode/{{ peca[0] }}">Ver QR Code</a></p>
-<p><a href="/etiqueta/{{ peca[0] }}" target="_blank">Imprimir QR Code</a></p>
-<p><a href="/remover/{{ peca[0] }}">Remover</a></p>
-<p><a href="/">Voltar</a></p>
+<html><head><meta charset="utf-8"><title>{{ peca[1] }}</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="card">
+<h2>{{ peca[1] }}</h2>
+<p><strong>Marca:</strong> {{ peca[2] }}<br><strong>Modelo:</strong> {{ peca[3] }}<br><strong>Cor:</strong> {{ peca[4] }}<br><strong>Número:</strong> {{ peca[5] }}<br><strong>Local:</strong> {{ peca[6] }}</p>
+{% if peca[7] %}<img src="/static/uploads/{{ peca[7] }}" width=250>{% endif %}
+<div class="botoes">
+<a href="/qrcode/{{ peca[0] }}" class="botao">Ver QR</a>
+<a href="/etiqueta/{{ peca[0] }}" target="_blank" class="botao">Imprimir</a>
+<a href="/remover/{{ peca[0] }}" class="botao alerta">Remover</a>
+</div><p><a href="/">← Voltar</a></p>
+</div></body></html>
