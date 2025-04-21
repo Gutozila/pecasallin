@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Ver Peça</title>
+<h1>{{ peca[1] }}</h1>
+<p>Marca: {{ peca[2] }}<br>Modelo: {{ peca[3] }}<br>Cor: {{ peca[4] }}<br>Número: {{ peca[5] }}<br>Local: {{ peca[6] }}</p>
+{% if peca[7] %}
+<img src="/static/uploads/{{ peca[7] }}" width=200>
+{% endif %}
+<p><a href="/qrcode/{{ peca[0] }}">Ver QR Code</a></p>
+<p><a href="/remover/{{ peca[0] }}">Remover</a></p>
+<p><a href="/">Voltar</a></p>
