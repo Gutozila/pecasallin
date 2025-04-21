@@ -43,6 +43,10 @@ def ver(pid):
     peca = con.execute("SELECT * FROM pecas WHERE id = ?", (pid,)).fetchone()
     return render_template("ver.html", peca=peca)
 
+@app.route("/etiqueta/<int:pid>")
+def etiqueta(pid):
+    return render_template("etiqueta.html", pid=pid)
+
 @app.route("/remover/<int:pid>")
 def remover(pid):
     con = sqlite3.connect("estoque.db")
