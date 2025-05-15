@@ -2,6 +2,10 @@
 <html><head><title>Etiqueta QR</title></head>
 <body style="text-align:center;padding:40px;">
 <h2>Etiqueta da Peça</h2>
-<img src="/qrcode/{{ pid }}" width="300">
-<script>window.print()</script>
+<img id="qrcode" width="300">
+<script>
+const id = window.location.pathname.split("/").pop();
+document.getElementById("qrcode").src = "/qrcode/" + id;
+window.print();
+</script>
 </body></html>

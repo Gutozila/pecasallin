@@ -1,0 +1,1 @@
+// Script placeholder: será preenchido com lógica de visualização

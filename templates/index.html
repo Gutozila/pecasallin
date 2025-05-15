@@ -1,11 +1,10 @@
 <!doctype html>
-<html><head><meta charset="utf-8"><title>Estoque</title>
+<html><head><meta charset="utf-8"><title>All In Parts</title>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#4CAF50">
-<link rel="stylesheet" href="/static/style.css">
-</head>
-<body><header><h1>📦 Estoque de Peças</h1></header>
-<form method="post" enctype="multipart/form-data" class="card">
+<link rel="stylesheet" href="/static/style.css"></head>
+<body><header><h1>ALL IN PARTS</h1></header>
+<form id="form" class="card">
 <input name="nome" placeholder="Nome da peça" required>
 <input name="marca" placeholder="Marca">
 <input name="modelo" placeholder="Modelo">
@@ -15,9 +14,6 @@
 <input type="file" name="imagem">
 <button type="submit">Salvar</button>
 </form>
-<form method="get" class="card">
-<input name="busca" value="{{ busca }}" placeholder="Buscar por modelo">
-<button>Buscar</button>
-</form>
-<div class="lista">{% for p in pecas %}<a class="item" href="/ver/{{ p[0] }}">🔧 {{ p[1] }} ({{ p[3] }})</a>{% endfor %}</div>
+<div class="lista" id="pecas"></div>
+<script src="/static/app.js"></script>
 </body></html>
