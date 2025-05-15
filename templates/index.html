@@ -2,8 +2,11 @@
 <html><head><meta charset="utf-8"><title>All In Parts</title>
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#4CAF50">
-<link rel="stylesheet" href="/static/style.css"></head>
-<body><header><h1>ALL IN PARTS</h1></header>
+<link rel="stylesheet" href="/static/style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+<header><h1>ALL IN PARTS</h1></header>
 <form id="form" class="card">
 <input name="nome" placeholder="Nome da peça" required>
 <input name="marca" placeholder="Marca">
@@ -11,7 +14,7 @@
 <input name="cor" placeholder="Cor">
 <input name="numero" placeholder="Número da peça">
 <input name="local" placeholder="Local no estoque">
-<input type="file" name="imagem">
+<textarea name="descricao" placeholder="Descrição completa"></textarea>
 <button type="submit">Salvar</button>
 </form>
 <div class="lista" id="pecas"></div>
